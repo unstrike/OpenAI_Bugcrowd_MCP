@@ -1,0 +1,35 @@
+[project]
+name = "bugcrowd-mcp"
+version = "1.0.0"
+description = "Bugcrowd MCP Server for OpenAI Agents SDK"
+authors = [
+    { name = "Bugcrowd MCP", email = "admin@unstrike.cloud" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=0.2.0",
+    "httpx>=0.24.0",
+]
+
+[project.optional-dependencies]
+openai = [
+    "openai-agents>=0.2.0",
+]
+
+[project.scripts]
+bugcrowd-mcp = "openai_mcp_server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.20.0",
+]

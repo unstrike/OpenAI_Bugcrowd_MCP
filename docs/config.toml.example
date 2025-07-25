@@ -1,0 +1,29 @@
+# OpenAI Codex Configuration Example for Bugcrowd MCP Server
+# Copy this to ~/.codex/config.toml and customize for your setup
+
+# OpenAI Codex Configuration
+model = "gpt-4o"
+disable_response_storage = false
+request_max_retries = 4
+stream_max_retries = 10
+stream_idle_timeout_ms = 300000
+
+name = "OpenAI + Bugcrowd"
+
+# Bugcrowd MCP Server Configuration
+[mcp_servers.Bugcrowd-MCP]
+command = "uv"
+args = ["run", "python3", "openai_mcp_server.py"]
+cwd = "/path/to/your/OpenAI_Bugcrowd_MCP"  # UPDATE THIS PATH
+env = { 
+    "BUGCROWD_API_USERNAME" = "your-username",    # UPDATE WITH YOUR CREDENTIALS
+    "BUGCROWD_API_PASSWORD" = "your-password"     # UPDATE WITH YOUR CREDENTIALS
+}
+description = "Bugcrowd bug bounty platform API access for security research and vulnerability management"
+
+# Alternative configuration using system environment variables
+# [mcp_servers.Bugcrowd-MCP]
+# command = "python3"
+# args = ["openai_mcp_server.py"]
+# cwd = "/path/to/your/OpenAI_Bugcrowd_MCP"
+# # Credentials will be read from BUGCROWD_API_USERNAME and BUGCROWD_API_PASSWORD env vars
