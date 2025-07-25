@@ -625,7 +625,7 @@ async def server_health() -> Dict[str, str]:
     """
     try:
         # Test API connectivity with a simple request
-        await _make_api_request("GET", "/organizations", query_params="limit=1")
+        await _make_api_request("GET", "/organizations", query_params="page[limit]=1")
         return {
             "status": "healthy",
             "api_connection": "ok",
