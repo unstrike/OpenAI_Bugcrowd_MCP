@@ -73,27 +73,27 @@ graph TB
 ## Architecture Components
 
 ### 1. User Interface Layer
-- **File**: `openai_agent_example.py:69-83`
+- **File**: `openai_agent_example.py`
 - **Purpose**: Interactive CLI for security researchers
 - **Functionality**: Natural language query processing
 
 ### 2. OpenAI Agent Layer
-- **File**: `openai_agent_example.py:43-58`
+- **File**: `openai_agent_example.py`
 - **Purpose**: AI agent with security research instructions
 - **Functionality**: Interprets user queries and calls appropriate tools
 
 ### 3. MCP Protocol Layer
-- **File**: `openai_agent_example.py:25-34`
+- **File**: `openai_agent_example.py`
 - **Purpose**: Model Context Protocol for tool communication
 - **Functionality**: Bridges OpenAI Agent and MCP Server
 
 ### 4. MCP Server Layer
-- **File**: `openai_mcp_server.py:44-45`
+- **File**: `openai_mcp_server.py`
 - **Purpose**: FastMCP server implementation
 - **Functionality**: Exposes 14 tools across 7 API categories
 
 ### 5. HTTP Client Layer
-- **File**: `openai_mcp_server.py:17-41`
+- **File**: `openai_mcp_server.py`
 - **Purpose**: Async HTTP client with authentication
 - **Functionality**: Handles API versioning and error handling
 
