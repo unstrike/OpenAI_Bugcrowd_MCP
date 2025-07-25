@@ -8,7 +8,7 @@ An MCP (Model Context Protocol) server providing secure access to the Bugcrowd b
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/unstrike/OpenAI_Bugcrowd_MCP.git
 cd OpenAI_Bugcrowd_MCP
 
 # Create virtual environment (using uv recommended)
