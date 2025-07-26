@@ -19,7 +19,7 @@ openai = [
 ]
 
 [project.scripts]
-bugcrowd-mcp = "openai_mcp_server:main"
+bugcrowd-mcp = "bugcrowd_mcp_server:main"
 
 [build-system]
 requires = ["hatchling"]

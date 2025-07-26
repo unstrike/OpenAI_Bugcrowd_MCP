@@ -1,6 +1,6 @@
 # Bugcrowd MCP Server
 
-An MCP (Model Context Protocol) server providing secure access to the Bugcrowd bug bounty platform API, optimized for OpenAI's Agents SDK integration.
+A flexible MCP (Model Context Protocol) server providing secure access to the Bugcrowd bug bounty platform API. Compatible with multiple LLM platforms including OpenAI Codex, Claude Code, and direct FastMCP integration.
 
 ## 🚀 Quick Start
 
@@ -54,7 +54,7 @@ import os
 async with MCPServerStdio(
     params={
         "command": "python3",
-        "args": ["openai_mcp_server.py"],
+        "args": ["bugcrowd_mcp_server.py"],
         "env": {
             "BUGCROWD_API_USERNAME": os.getenv("BUGCROWD_API_USERNAME"),
             "BUGCROWD_API_PASSWORD": os.getenv("BUGCROWD_API_PASSWORD")
@@ -71,7 +71,11 @@ async with MCPServerStdio(
     response = await Runner.run(agent, "Show me the latest bug bounty programs")
 ```
 
-### Method 3: OpenAI Codex System Configuration
+### Method 3: Multi-Platform LLM Integration
+
+This MCP server works with multiple LLM platforms. Choose your preferred integration method:
+
+#### OpenAI Codex Configuration
 
 Configure the server in your OpenAI Codex configuration file at `~/.codex/config.toml`:
 
@@ -87,15 +91,45 @@ name = "OpenAI Codex Bugcrowd-MCP"
 
 [mcp_servers.Bugcrowd-MCP]
 command = "uv"
-args = ["run", "python3", "openai_mcp_server.py"]
+args = ["run", "python3", "bugcrowd_mcp_server.py"]
 cwd = "/path/to/your/OpenAI_Bugcrowd_MCP"
 env = { "BUGCROWD_API_USERNAME" = "your-username", "BUGCROWD_API_PASSWORD" = "your-password" }
 description = "Bugcrowd bug bounty platform API access for security research and vulnerability management"
 ```
 
-**Important**: Replace `/path/to/your/OpenAI_Bugcrowd_MCP` with the actual path to this project directory, and set your actual Bugcrowd API credentials.
+#### Claude Code Configuration
 
-Once configured, you can use the server through OpenAI Codex CLI directly without running the example scripts.
+For Claude Code users, use the provided JSON configuration template:
+
+1. Copy `docs/claude_code_config.json` to your Claude Code MCP servers directory
+2. Update the `cwd` path to match your installation directory
+3. Set your Bugcrowd API credentials as environment variables:
+   ```bash
+   export BUGCROWD_API_USERNAME="your-username"
+   export BUGCROWD_API_PASSWORD="your-password"
+   ```
+4. Add the server using Claude Code's MCP management:
+   ```bash
+   claude mcp add bugcrowd-mcp \
+     -e ANTHROPIC_API_KEY='$ANTHROPIC_API_KEY' \
+     -- /path/to/your/OpenAI_Bugcrowd_MCP/bugcrowd_mcp_server.py
+   ```
+   
+   Or import the JSON configuration directly into your Claude Code MCP settings.
+
+#### FastMCP Direct Integration
+
+For direct MCP client integration without LLM wrapper, see `docs/fastmcp_example.py`:
+
+```bash
+# Install FastMCP dependencies
+uv add mcp
+
+# Run the FastMCP example
+uv run python3 docs/fastmcp_example.py
+```
+
+**Important**: Replace paths with your actual installation directory and set your Bugcrowd API credentials appropriately for your chosen platform.
 
 ## 🛠️ Available Tools
 
@@ -129,7 +163,7 @@ The server provides access to these Bugcrowd API endpoints:
 ./test/test_server.sh
 
 # Or run directly with uv
-uv run python3 openai_mcp_server.py
+uv run python3 bugcrowd_mcp_server.py
 ```
 
 ### Interactive Testing
@@ -141,7 +175,7 @@ uv run python3 agents/openai_agent_example.py
 ## Project Structure
 
 ```
-├── openai_mcp_server.py          # Main MCP server implementation
+├── bugcrowd_mcp_server.py        # Main MCP server implementation
 ├── pyproject.toml                # Project configuration and dependencies
 ├── uv.lock                       # Locked dependency versions
 ├── README.md                     # This documentation
@@ -149,8 +183,12 @@ uv run python3 agents/openai_agent_example.py
 ├── agents/
 │   └── openai_agent_example.py   # Interactive agent example
 ├── docs/
+│   ├── INTEGRATION_GUIDE.md      # Platform integration instructions
+│   ├── API_REFERENCE.md          # Complete API documentation
 │   ├── architecture_diagram.md   # System architecture documentation
-│   ├── config.toml.example       # OpenAI Codex configuration template
+│   ├── claude_code_config.json   # Claude Code configuration template
+│   ├── fastmcp_example.py        # FastMCP direct integration example
+│   └── config.toml.example       # OpenAI Codex configuration template
 └── test/
     └── test_server.sh            # Server testing script
 ```
@@ -162,8 +200,8 @@ uv run python3 agents/openai_agent_example.py
 - **Responsible Disclosure**: Follow ethical practices when working with vulnerability data
 - **Authentication**: Ensure proper authentication before accessing sensitive endpoints
 
-## 🤝 Contributing
+## 📚 Documentation
 
-This project exposes the Bugcrowd API for security research. When contributing to this project:
-- Maintain focus on defensive security tools and metrics
-- Ensure proper error handling and validation
+- [Integration Guide](docs/INTEGRATION_GUIDE.md) - Detailed platform integration instructions
+- [API Reference](docs/API_REFERENCE.md) - Complete tool and endpoint documentation
+- [Architecture Diagram](docs/architecture_diagram.md) - System architecture overview

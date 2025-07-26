@@ -20,7 +20,7 @@ async def main():
     # Get the project root directory for the server script
     current_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(current_dir)
-    server_script = os.path.join(project_root, "openai_mcp_server.py")
+    server_script = os.path.join(project_root, "bugcrowd_mcp_server.py")
 
     # Create MCP server connection
     async with MCPServerStdio(
