@@ -11,6 +11,7 @@ requires-python = ">=3.10"
 dependencies = [
     "mcp>=0.2.0",
     "httpx>=0.24.0",
+    "openai-agents>=0.2.3",
 ]
 
 [project.optional-dependencies]
