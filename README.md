@@ -8,8 +8,8 @@ A flexible MCP (Model Context Protocol) server providing secure access to the Bu
 
 ```bash
 # Clone the repository
-git clone https://github.com/unstrike/OpenAI_Bugcrowd_MCP.git
-cd OpenAI_Bugcrowd_MCP
+git clone https://github.com/unstrike/Bugcrowd_MCP_Server.git
+cd Bugcrowd_MCP_Server
 
 # Create virtual environment (using uv recommended)
 uv venv
