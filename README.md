@@ -92,7 +92,7 @@ name = "OpenAI Codex Bugcrowd-MCP"
 [mcp_servers.Bugcrowd-MCP]
 command = "uv"
 args = ["run", "python3", "bugcrowd_mcp_server.py"]
-cwd = "/path/to/your/OpenAI_Bugcrowd_MCP"
+cwd = "/path/to/your/Bugcrowd_MCP_Server"
 env = { "BUGCROWD_API_USERNAME" = "your-username", "BUGCROWD_API_PASSWORD" = "your-password" }
 description = "Bugcrowd bug bounty platform API access for security research and vulnerability management"
 ```
@@ -112,7 +112,7 @@ For Claude Code users, use the provided JSON configuration template:
    ```bash
    claude mcp add bugcrowd-mcp \
      -e ANTHROPIC_API_KEY='$ANTHROPIC_API_KEY' \
-     -- /path/to/your/OpenAI_Bugcrowd_MCP/bugcrowd_mcp_server.py
+     -- /path/to/your/Bugcrowd_MCP_Server/bugcrowd_mcp_server.py
    ```
    
    Or import the JSON configuration directly into your Claude Code MCP settings.

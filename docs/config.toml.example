@@ -13,8 +13,8 @@ name = "OpenAI + Bugcrowd"
 # Bugcrowd MCP Server Configuration
 [mcp_servers.Bugcrowd-MCP]
 command = "uv"
-args = ["run", "python3", "openai_mcp_server.py"]
-cwd = "/path/to/your/OpenAI_Bugcrowd_MCP"  # UPDATE THIS PATH
+args = ["run", "python3", "bugcrowd_mcp_server.py"]
+cwd = "/path/to/your/Bugcrowd_MCP_Server"  # UPDATE THIS PATH
 env = { 
     "BUGCROWD_API_USERNAME" = "your-username",    # UPDATE WITH YOUR CREDENTIALS
     "BUGCROWD_API_PASSWORD" = "your-password"     # UPDATE WITH YOUR CREDENTIALS
@@ -24,6 +24,6 @@ description = "Bugcrowd bug bounty platform API access for security research and
 # Alternative configuration using system environment variables
 # [mcp_servers.Bugcrowd-MCP]
 # command = "python3"
-# args = ["openai_mcp_server.py"]
-# cwd = "/path/to/your/OpenAI_Bugcrowd_MCP"
+# args = ["bugcrowd_mcp_server.py"]
+# cwd = "/path/to/your/Bugcrowd_MCP_Server"
 # # Credentials will be read from BUGCROWD_API_USERNAME and BUGCROWD_API_PASSWORD env vars

@@ -12,7 +12,7 @@ graph TB
     MCP[📡 MCP Protocol<br/>Model Context Protocol]
     
     %% MCP Server Layer
-    Server[🔧 Bugcrowd MCP Server<br/>openai_mcp_server.py]
+    Server[🔧 Bugcrowd MCP Server<br/>bugcrowd_mcp_server.py]
     
     %% API Client Layer
     HTTP[🌐 HTTP Client<br/>httpx AsyncClient]
@@ -88,12 +88,12 @@ graph TB
 - **Functionality**: Bridges OpenAI Agent and MCP Server
 
 ### 4. MCP Server Layer
-- **File**: `openai_mcp_server.py`
+- **File**: `bugcrowd_mcp_server.py`
 - **Purpose**: FastMCP server implementation
 - **Functionality**: Exposes 14 tools across 7 API categories
 
 ### 5. HTTP Client Layer
-- **File**: `openai_mcp_server.py`
+- **File**: `bugcrowd_mcp_server.py`
 - **Purpose**: Async HTTP client with authentication
 - **Functionality**: Handles API versioning and error handling
 
