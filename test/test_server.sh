@@ -48,7 +48,7 @@ fi
 cd "$(dirname "$0")/.."
 
 # Make the server script executable
-chmod +x openai_mcp_server.py
+chmod +x bugcrowd_mcp_server.py
 
 echo ""
 echo "🚀 Testing MCP Server Startup..."
@@ -56,4 +56,4 @@ echo "Press Ctrl+C to stop the server"
 echo ""
 
 # Test the server by running it with uv
-uv run python3 openai_mcp_server.py
+uv run python3 bugcrowd_mcp_server.py
