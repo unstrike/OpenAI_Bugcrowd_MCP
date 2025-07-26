@@ -8,8 +8,8 @@ A flexible MCP (Model Context Protocol) server providing secure access to the Bu
 
 ```bash
 # Clone the repository
-git clone https://github.com/unstrike/Bugcrowd_MCP_Server.git
-cd Bugcrowd_MCP_Server
+git clone https://github.com/unstrike/OpenAI_Bugcrowd_MCP.git
+cd OpenAI_Bugcrowd_MCP
 
 # Create virtual environment (using uv recommended)
 uv venv
@@ -92,7 +92,7 @@ name = "OpenAI Codex Bugcrowd-MCP"
 [mcp_servers.Bugcrowd-MCP]
 command = "uv"
 args = ["run", "python3", "bugcrowd_mcp_server.py"]
-cwd = "/path/to/your/Bugcrowd_MCP_Server"
+cwd = "/path/to/your/OpenAI_Bugcrowd_MCP"
 env = { "BUGCROWD_API_USERNAME" = "your-username", "BUGCROWD_API_PASSWORD" = "your-password" }
 description = "Bugcrowd bug bounty platform API access for security research and vulnerability management"
 ```
@@ -112,7 +112,7 @@ For Claude Code users, use the provided JSON configuration template:
    ```bash
    claude mcp add bugcrowd-mcp \
      -e ANTHROPIC_API_KEY='$ANTHROPIC_API_KEY' \
-     -- /path/to/your/Bugcrowd_MCP_Server/bugcrowd_mcp_server.py
+     -- /path/to/your/OpenAI_Bugcrowd_MCP/bugcrowd_mcp_server.py
    ```
    
    Or import the JSON configuration directly into your Claude Code MCP settings.
@@ -192,13 +192,6 @@ uv run python3 agents/openai_agent_example.py
 └── test/
     └── test_server.sh            # Server testing script
 ```
-
-## 🔒 Security & Best Practices
-
-- **Credential Management**: Store API credentials securely using environment variables or system configuration
-- **Defensive Focus**: This server only exposes tools for defensive security research and vulnerability management
-- **Responsible Disclosure**: Follow ethical practices when working with vulnerability data
-- **Authentication**: Ensure proper authentication before accessing sensitive endpoints
 
 ## 📚 Documentation
 
