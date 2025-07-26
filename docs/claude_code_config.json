@@ -3,7 +3,7 @@
     "bugcrowd-mcp": {
       "command": "uv",
       "args": ["run", "python3", "bugcrowd_mcp_server.py"],
-      "cwd": "/Users/nix/Developer/projects/Bugcrowd_MCP_Server",
+      "cwd": "/path/to/Bugcrowd_MCP_Server",
       "env": {
         "BUGCROWD_API_USERNAME": "${BUGCROWD_API_USERNAME}",
         "BUGCROWD_API_PASSWORD": "${BUGCROWD_API_PASSWORD}"

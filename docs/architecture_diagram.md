@@ -5,8 +5,8 @@ graph TB
     %% User Layer
     User[👤 Security Researcher]
     
-    %% OpenAI Agent Layer  
-    Agent[🤖 OpenAI Agent<br/>Bugcrowd Security Assistant]
+    %% AI Agent Layer  
+    Agent[🤖 AI Agent<br/>Bugcrowd Security Assistant]
     
     %% MCP Protocol Layer
     MCP[📡 MCP Protocol<br/>Model Context Protocol]
@@ -73,19 +73,19 @@ graph TB
 ## Architecture Components
 
 ### 1. User Interface Layer
-- **File**: `openai_agent_example.py`
+- **Implementation**: Any MCP-compatible client
 - **Purpose**: Interactive CLI for security researchers
 - **Functionality**: Natural language query processing
 
-### 2. OpenAI Agent Layer
-- **File**: `openai_agent_example.py`
+### 2. AI Agent Layer
+- **Implementation**: Any MCP-compatible client
 - **Purpose**: AI agent with security research instructions
 - **Functionality**: Interprets user queries and calls appropriate tools
 
 ### 3. MCP Protocol Layer
-- **File**: `openai_agent_example.py`
+- **Implementation**: Any MCP-compatible client
 - **Purpose**: Model Context Protocol for tool communication
-- **Functionality**: Bridges OpenAI Agent and MCP Server
+- **Functionality**: Bridges AI Agent and MCP Server
 
 ### 4. MCP Server Layer
 - **File**: `bugcrowd_mcp_server.py`
@@ -105,7 +105,7 @@ graph TB
 ## Data Flow
 
 1. **User Input**: Security researcher enters natural language queries
-2. **Agent Processing**: OpenAI agent interprets queries and determines appropriate tools
+2. **Agent Processing**: AI agent interprets queries and determines appropriate tools
 3. **MCP Communication**: Agent communicates with MCP server via protocol
 4. **Tool Execution**: MCP server executes specific API calls
 5. **HTTP Requests**: Authenticated requests sent to Bugcrowd API

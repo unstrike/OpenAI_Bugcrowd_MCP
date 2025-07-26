@@ -55,7 +55,7 @@ uv add mcp
 ```
 
 ### Usage Example
-See `docs/fastmcp_example.py` for a complete implementation:
+See `agents/fastmcp_example.py` for a complete implementation:
 
 ```python
 from mcp.client.session import ClientSession

@@ -84,7 +84,5 @@ async def main():
                 print(f"Error: {e}")
 
 if __name__ == "__main__":
-    # Make sure you have the required dependencies installed:
-    # uv add openai-agents httpx mcp
 
     asyncio.run(main())
