@@ -119,14 +119,14 @@ For Claude Code users, use the provided JSON configuration template:
 
 #### FastMCP Direct Integration
 
-For direct MCP client integration without LLM wrapper, see `docs/fastmcp_example.py`:
+For direct MCP client integration without LLM wrapper, see `agents/fastmcp_example.py`:
 
 ```bash
 # Install FastMCP dependencies
 uv add mcp
 
 # Run the FastMCP example
-uv run python3 docs/fastmcp_example.py
+uv run python3 agents/fastmcp_example.py
 ```
 
 **Important**: Replace paths with your actual installation directory and set your Bugcrowd API credentials appropriately for your chosen platform.
@@ -182,12 +182,12 @@ uv run python3 agents/openai_agent_example.py
 ├── LICENSE                       # MIT license
 ├── agents/
 │   └── openai_agent_example.py   # Interactive agent example
+|   └── fastmcp_example.py        # FastMCP direct integration example
 ├── docs/
 │   ├── INTEGRATION_GUIDE.md      # Platform integration instructions
 │   ├── API_REFERENCE.md          # Complete API documentation
 │   ├── architecture_diagram.md   # System architecture documentation
 │   ├── claude_code_config.json   # Claude Code configuration template
-│   ├── fastmcp_example.py        # FastMCP direct integration example
 │   └── config.toml.example       # OpenAI Codex configuration template
 └── test/
     └── test_server.sh            # Server testing script
